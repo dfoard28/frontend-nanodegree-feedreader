@@ -61,7 +61,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it('should not show menu',function(){
+        it('should have class menu-hidden on body',function(){
             var body = document.getElementsByTagName('body');
             expect(body[0].className).toMatch('menu-hidden');
         })  

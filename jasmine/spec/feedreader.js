@@ -71,14 +71,14 @@ $(function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-        describe('icon click',function(){
+        describe('Icon click',function(){
             beforeEach(function(){
                 menuIcon[0].click();
             })
             it('should display menu when clicked',function(){
                 expect(body[0].className).not.toMatch('menu-hidden');
             })
-            it('should not display menu when clicked',function(){
+            it('should not display menu when clicked again',function(){
                 expect(body[0].className).toMatch('menu-hidden');
             })
         })
@@ -92,6 +92,16 @@ $(function() {
          * Remember, loadFeed() is asynchronous so this test will require
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
+
+        beforeEach(function(done){
+            loadFeed(0,done);
+        })
+        it('should have an entry element within feed container',function(done){
+            var feed = document.getElementsByClassName('feed')[0];
+            var feedElement = feed.getElementsByClassName('entry');
+            expect(feedElement.length).toBeGreaterThan(0);
+            done();
+        })
     })
 
     /* TODO: Write a new test suite named "New Feed Selection" */

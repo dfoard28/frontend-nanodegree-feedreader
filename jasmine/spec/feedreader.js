@@ -36,7 +36,7 @@ $(function() {
                 expect(element.url).not.toBeUndefined();
                 expect(element.url).not.toBeNull(); 
                 expect(element.url).not.toBe("");
-            })
+            });
         });
 
         /* TODO: Write a test that loops through each feed
@@ -49,7 +49,7 @@ $(function() {
                 expect(element.name).not.toBeUndefined();
                 expect(element.name).not.toBeNull();
                 expect(element.name).not.toBe("");
-            })
+            });
         });
     });
 
@@ -65,7 +65,7 @@ $(function() {
          */
         it('should have class menu-hidden on body',function(){
             expect(body[0].className).toMatch('menu-hidden');
-        })  
+        }); 
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
@@ -74,15 +74,15 @@ $(function() {
         describe('Icon click',function(){
             beforeEach(function(){
                 menuIcon[0].click();
-            })
+            });
             it('should display menu when clicked',function(){
                 expect(body[0].className).not.toMatch('menu-hidden');
-            })
+            });
             it('should not display menu when clicked again',function(){
                 expect(body[0].className).toMatch('menu-hidden');
-            })
-        })
-    })
+            });
+        });
+    });
 
     /* TODO: Write a new test suite named "Initial Entries" */
     describe('Initial Entries',function(){
@@ -95,14 +95,14 @@ $(function() {
 
         beforeEach(function(done){
             loadFeed(0,done);
-        })
+        });
         it('should have an entry element within feed container',function(done){
             var feed = document.getElementsByClassName('feed')[0];
             var feedElement = feed.getElementsByClassName('entry');
             expect(feedElement.length).toBeGreaterThan(0);
             done();
-        })
-    })
+        });
+    });
 
     /* TODO: Write a new test suite named "New Feed Selection" */
     describe('New Feed Selection', function(){
@@ -112,7 +112,7 @@ $(function() {
          */
         beforeEach(function(done){
             loadFeed(0,done);
-        })
+        });
         it('new feed should change content', function(done){
             var feed = document.getElementsByClassName('feed');
             var elements = feed[0].getElementsByClassName('entry');
@@ -122,7 +122,7 @@ $(function() {
             expect(content1).not.toMatch(content2);
             }
             done();
-        })
-
-    })
+        });
+    });
 }());
+

@@ -110,5 +110,20 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        beforeEach(function(done){
+            loadFeed(0,done);
+        })
+        it('new feed should change content', function(done){
+            var feed = document.getElementsByClassName('feed');
+            var elements = feed[0].getElementsByClassName('entry');
+            for(var i = 0; i < elements.length; i++){
+                var content1 = elements[0].textContent;
+                var content2 = elements[1].textContent;
+            expect(content1).not.toMatch(content2);
+            }
+
+            done();
+        })
+
     })
 }());

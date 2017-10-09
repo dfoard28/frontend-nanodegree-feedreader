@@ -121,7 +121,6 @@ $(function() {
                 var content2 = elements[1].textContent;
             expect(content1).not.toMatch(content2);
             }
-
             done();
         })
 

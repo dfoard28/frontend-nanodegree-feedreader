@@ -4,7 +4,7 @@ This project was used to test an application using [Jasmine](http://jasmine.gith
 
 #Getting Started
 
-* git clone <repository-URL>
+* git clone `repository URL`
 * open project file and explore the HTML,CSS,Javascript files.
 * to run test open the index.html file in your browser (at the bottom of the page you will see all of the jasmine test information).
 * to make new tests or adjust any current test  open the feedreader.js file and make changes.

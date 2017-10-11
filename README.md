@@ -2,7 +2,15 @@
 
 This project was used to test an application using [Jasmine](http://jasmine.github.io/) that was already developed.
 
-## What was learned?
+#Getting Started
+
+* git clone <repository-URL>
+* open project file and explore the HTML,CSS,Javascript files.
+* to run test open the index.html file in your browser (at the bottom of the page you will see all of the jasmine test information).
+* to make new tests or adjust any current test  open the feedreader.js file and make changes.
+
+
+# What was learned?
 
 This project was used to learn how write tests for a pre-existing application with Jasmine. These tests included writing new suites and specs, using matchers, and also asynchronous operations.
 
@@ -17,7 +25,7 @@ This project includes the following:
 6. feedreader.js jasmine file
 
 
-# project information
+#project information
 
 1. spec `URL is defined` within the `RSS Feeds`suite loops through each feed in the `allFeeds` object and ensures that a URL defined and that the URL is not empty.
 2. spec `name is defined` within the `RSS Feeds` suite loops through each feed in the `allFeeds` object and ensures it has a name defined and that the name is not empty.

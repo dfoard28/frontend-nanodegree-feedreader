@@ -56,16 +56,14 @@ $(function() {
 
     /* new test suite named "The menu" */
     describe('The menu',function(){
-        var body = document.getElementsByTagName('body');
-        var menuIcon = document.getElementsByClassName('menu-icon-link');
          /* test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
         it('should have class menu-hidden on body',function(){
-            expect(body[0].className).toMatch('menu-hidden');
-        }); 
+            expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
          /* test ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
@@ -73,13 +71,13 @@ $(function() {
           */
         describe('Icon click',function(){
             beforeEach(function(){
-                menuIcon[0].click();
+                    $('.menu-icon-link').trigger('click');
             });
             it('should display menu when clicked',function(){
-                expect(body[0].className).not.toMatch('menu-hidden');
+                expect($('body').hasClass('menu-hidden')).toBeFalsy();
             });
             it('should not display menu when clicked again',function(){
-                expect(body[0].className).toMatch('menu-hidden');
+               expect($('body').hasClass('menu-hidden')).toBeTruthy();
             });
         });
     });
@@ -96,11 +94,10 @@ $(function() {
         beforeEach(function(done){
             loadFeed(0,done);
         });
-        it('should have an entry element within feed container',function(done){
+        it('should have an entry element within feed container',function(){
             var feed = document.getElementsByClassName('feed')[0];
             var feedElement = feed.getElementsByClassName('entry');
             expect(feedElement.length).toBeGreaterThan(0);
-            done();
         });
     });
 
